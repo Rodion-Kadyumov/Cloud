@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-users #текстовый идентификатор (Обязателен)
+      author: Rodion Kaduymov # автор (Обязателен)
+      changes:
+        - createTable: # создаем новую таблицу
+            tableName: users
+            columns: # объявления колонок
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: login
+                  type: varchar(128)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: password
+                  type: varchar(128)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created
+                  type: timestamp without time zone
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated
+                  type: timestamp without time zone
+                  constraints:
+                    nullable: true
