@@ -1,3 +1,4 @@
-databaseChangeLog: #параметр в котором находятся миграции
-  - includeAll:
-      path: db/changelog/changeset/
+databaseChangeLog:
+  - include:
+      file: migrations/schema.xml
+      relativeToChangelogFile: true
