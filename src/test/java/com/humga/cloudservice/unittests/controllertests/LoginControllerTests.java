@@ -40,7 +40,7 @@ public class LoginControllerTests {
         MvcResult result = mockMvc.perform(post("/cloud/login")
                         .contentType(MediaType.APPLICATION_JSON_VALUE)
                         .content("{\n" +
-                                "    \"login\" : \"alex@email.com\",\n" +
+                                "    \"login\" : \"rodion@email.com\",\n" +
                                 "    \"password\" : \"passAlex\"\n" +
                                 "}"))
                 .andExpect(status().isOk())
@@ -67,8 +67,6 @@ public class LoginControllerTests {
 
     @Test
     void logoutTest() throws Exception {
-        //given
-        //This token expires on 01/01/3000, so if the test is still relevant, it will work)))
         final String token = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbGV4QGVtYWlsLmNvbSIs" +
                 "InNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9SRUFEIn0seyJhdXRob3JpdHkiOiJST0xFX1dSSVR" +
                 "FIn1dLCJpc3MiOiJodHRwOi8vaHVtZ2Fpc3N1ZXIuY29tIiwiaWF0IjoxNjU0NjIyMTAyLCJleHAiOj" +

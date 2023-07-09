@@ -24,12 +24,8 @@ public class UserServiceTests {
 
     @Test
     void loadUserByNameTest() {
-        //given user db table filled in while app initialization
-
-        //when
         UserDetails userDetails = userService.loadUserByUsername("alex@email.com");
 
-        //then
         assertEquals("alex@email.com", userDetails.getUsername());
         assertTrue(encoder.matches("passAlex", userDetails.getPassword()));
         List<String> authorities =
@@ -46,13 +42,9 @@ public class UserServiceTests {
 
     @Test
     void loadUserByNameNotExistingUserTest() {
-        //given user db table filled in while app initialization
-
-        //when
         UsernameNotFoundException e = assertThrows(UsernameNotFoundException.class,
                 () -> userService.loadUserByUsername("notexist@email.com"));
 
-        //then
         assertEquals(e.getMessage(), "Invalid username or password.");
     }
 }

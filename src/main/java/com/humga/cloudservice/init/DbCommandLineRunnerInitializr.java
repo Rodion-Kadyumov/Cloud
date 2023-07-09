@@ -32,7 +32,7 @@ public class DbCommandLineRunnerInitializr implements CommandLineRunner {
     @Transactional
     public void run(String... args) {
         if (userRepo.findAll().isEmpty()) {
-            User user= new User("alex@email.com", encoder.encode("passAlex"));
+            User user= new User("rodion@email.com", encoder.encode("passRodion"));
             userRepo.save(user);
             authRepo.save(new Authority(user, "ROLE_READ"));
             authRepo.save(new Authority(user, "ROLE_WRITE"));

@@ -37,7 +37,6 @@ public class FileControllerTests {
 
     private final byte[] TEST_FILE = {1, 2, 3};
 
-    //This token expires on 01/01/3000, so if the test is still relevant, it will work)))
     private final String TOKEN = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbGV4QGVtYWlsLmNvbSIs" +
             "InNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9SRUFEIn0seyJhdXRob3JpdHkiOiJST0xFX1dSSVR" +
             "FIn1dLCJpc3MiOiJodHRwOi8vaHVtZ2Fpc3N1ZXIuY29tIiwiaWF0IjoxNjU0NjIyMTAyLCJleHAiOj" +
@@ -135,7 +134,6 @@ public class FileControllerTests {
         ObjectMapper mapper = new ObjectMapper();
         List<FileInfoDTO> actualList = mapper.readValue(result, new TypeReference<List<FileInfoDTO>>() {});
 
-        //FileInfoDTO correctly overrides equals (by lombok @Data), as well as the List, so this will work:
         assertEquals(expectedList, actualList);
     }
 }
